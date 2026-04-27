@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+
+  datasource:
+    url: ${YOEDU_DB_URL:jdbc:mysql://localhost:3306/yoot_management_db?createDatabaseIfNotExist=true}
+    username: ${YOEDU_DB_USERNAME:root}
+    password: ${YOEDU_DB_PASSWORD:dev}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect

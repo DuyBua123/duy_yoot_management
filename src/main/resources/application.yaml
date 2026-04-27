@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: yoot_management
+
+  profiles:
+    active: ${APP_PROFILE:dev}

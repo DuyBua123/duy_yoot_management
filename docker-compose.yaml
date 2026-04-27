@@ -1,0 +1,22 @@
+services:
+
+  db:
+    image: mysql:9.1.0
+    restart: no
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_DATABASE: yoot_management_db
+    volumes:
+      - yoot_management_data:/var/lib/mysql
+    networks:
+      - yoot_management_network
+
+volumes:
+  yoot_management_data:
+
+networks:
+  yoot_management_network:
+    name: yoot_management_network
+    driver: bridge
