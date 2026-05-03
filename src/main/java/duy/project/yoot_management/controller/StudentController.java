@@ -4,6 +4,7 @@ import duy.project.yoot_management.common.exception.NotFoundException;
 import duy.project.yoot_management.dto.request.StudentUpsertRequest;
 import duy.project.yoot_management.dto.response.StudentResponse;
 import duy.project.yoot_management.service.StudentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,14 +34,14 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<StudentResponse> createStudent(@RequestBody StudentUpsertRequest studentRequest) {
+    public ResponseEntity<StudentResponse> createStudent(@RequestBody @Valid StudentUpsertRequest studentRequest) {
         return ResponseEntity.ok(studentService.create(studentRequest));
     }
 
     @PutMapping("{id}")
     public ResponseEntity<StudentResponse> updateStudent(
             @PathVariable Long id,
-            @RequestBody StudentUpsertRequest studentRequest
+            @RequestBody @Valid StudentUpsertRequest studentRequest
     ) {
         return ResponseEntity.ok(studentService.update(id, studentRequest));
     }
