@@ -1,4 +1,4 @@
-package duy.project.yoot_management.security;
+package duy.project.yoot_management.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
