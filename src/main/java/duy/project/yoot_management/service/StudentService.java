@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface StudentService {
     List<StudentResponse> findByAll();
+    List<StudentResponse> searchByFullName(String keyword);
     Optional<StudentResponse> findById(Long id);
     StudentResponse create(StudentUpsertRequest studentResponse);
     StudentResponse update(Long id, StudentUpsertRequest studentResponse);
