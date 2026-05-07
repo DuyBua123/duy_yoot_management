@@ -30,41 +30,10 @@ public class StudentServiceImpl implements StudentService {
                 .toList();
     }
 
-
-    /*private StudentResponse map(Student student) {
-        StudentResponse result = new StudentResponse();
-        ParentResponse pResult = new ParentResponse();
-
-        if (student.getParent() != null) {
-            pResult.setId(student.getParent().getId());
-            pResult.setFullName(student.getParent().getFullName());
-            pResult.setPhone(student.getParent().getPhone());
-            pResult.setEmail(student.getParent().getEmail());
-            pResult.setAddress(student.getParent().getAddress());
-            pResult.setRelationship(student.getParent().getRelationship());
-            pResult.setGender(student.getParent().getGender());
-        }
-
-        result.setId(student.getId());
-        result.setStudentCode(student.getStudentCode());
-        result.setFullName(student.getFullName());
-        result.setDateOfBirth(student.getDateOfBirth());
-        result.setGender(student.getGender());
-        result.setGradeLevel(student.getGradeLevel());
-        result.setSchoolName(student.getSchoolName());
-        result.setPhone(student.getPhone());
-        result.setDescription(student.getDescription());
-        result.setParent(pResult);
-        result.setStatus(student.getStatus());
-        result.setLatestScore(student.getLatestScore());
-        result.setNote(student.getNote());
-
-        return result;
-    }*/
-
-
-    private StudentResponse mapStudentResponse(Student student) {
-        return mapper.map(student, StudentResponse.class);
+    public List<StudentResponse> searchByFullName(String keyword) {
+        return studentRepository.searchByFullName(keyword).stream()
+                .map(this::mapStudentResponse)
+                .toList();
     }
 
     public Optional<StudentResponse> findById(Long id) {
@@ -104,5 +73,14 @@ public class StudentServiceImpl implements StudentService {
             throw new NotFoundException("Student not found with id: " + id);
         }
     }
+
+
+
+    // PRIVATE METHODS
+
+    private StudentResponse mapStudentResponse(Student student) {
+        return mapper.map(student, StudentResponse.class);
+    }
+
 
 }
