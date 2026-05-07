@@ -1,10 +1,9 @@
 package duy.project.yoot_management.dto.request;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 
 @Getter
-public class CourseRequest {
+public class CourseUpsertRequest {
 
     private String courseCode;
 

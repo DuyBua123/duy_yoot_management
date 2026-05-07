@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Parent;
-import duy.project.yoot_management.dto.request.ParentRequest;
+import duy.project.yoot_management.dto.request.ParentUpsertRequest;
 import duy.project.yoot_management.repository.ParentRepository;
 import duy.project.yoot_management.service.ParentService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class ParentServiceImpl implements ParentService {
     }
 
     @Override
-    public Parent save(ParentRequest parent) {
+    public Parent save(ParentUpsertRequest parent) {
 
         Parent creatingParent = new Parent();
         creatingParent.setFullName(parent.getFullName());
@@ -40,7 +40,7 @@ public class ParentServiceImpl implements ParentService {
     }
 
     @Override
-    public Parent update(Long id, ParentRequest parent) {
+    public Parent update(Long id, ParentUpsertRequest parent) {
 
         Optional<Parent> optionalParent = parentRepository.findById(id);
         if (optionalParent.isEmpty()) {

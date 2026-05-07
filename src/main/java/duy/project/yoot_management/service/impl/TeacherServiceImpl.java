@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Teacher;
-import duy.project.yoot_management.dto.request.TeacherRequest;
+import duy.project.yoot_management.dto.request.TeacherUpsertRequest;
 import duy.project.yoot_management.repository.TeacherRepository;
 import duy.project.yoot_management.service.TeacherService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public Teacher create(TeacherRequest teacher) {
+    public Teacher create(TeacherUpsertRequest teacher) {
 
         Teacher creatingTeacher = new Teacher();
         creatingTeacher.setTeacherCode(teacher.getTeacherCode());
@@ -43,7 +43,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public Teacher update(Long id, TeacherRequest teacher) {
+    public Teacher update(Long id, TeacherUpsertRequest teacher) {
 
         Optional<Teacher> optionalTeacher = teacherRepository.findById(id);
 

@@ -3,10 +3,7 @@ package duy.project.yoot_management.dto.request;
 import duy.project.yoot_management.domains.Parent;
 import duy.project.yoot_management.domains.enums.Gender;
 import duy.project.yoot_management.domains.enums.StudentStatus;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,14 +20,14 @@ public class StudentUpsertRequest {
     @Size(min = 2)
     private String studentCode;
 
+    @NotBlank
     private String fullName;
 
     private LocalDate dateOfBirth;
 
     private Gender gender = Gender.OTHER;
 
-    @Min(value = 1)
-    @Max(value = 4)
+    @Size(min = 1, max = 30)
     private String gradeLevel;
 
     private String schoolName;

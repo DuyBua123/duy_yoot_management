@@ -1,7 +1,7 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.domains.Parent;
-import duy.project.yoot_management.dto.request.ParentRequest;
+import duy.project.yoot_management.dto.request.ParentUpsertRequest;
 import duy.project.yoot_management.service.ParentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,14 +30,14 @@ public class ParentController {
     }
 
     @PostMapping
-    public ResponseEntity<Parent> createParent(ParentRequest parent) {
+    public ResponseEntity<Parent> createParent(ParentUpsertRequest parent) {
         return ResponseEntity.ok(parentService.save(parent));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Parent> updateParent(
             @PathVariable("id") Long id,
-            @RequestBody ParentRequest parent
+            @RequestBody ParentUpsertRequest parent
     ) {
         try {
             return ResponseEntity.ok(parentService.update(id, parent));
