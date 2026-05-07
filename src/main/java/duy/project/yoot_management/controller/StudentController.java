@@ -26,6 +26,15 @@ public class StudentController {
         return ResponseEntity.ok(students);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<StudentResponse>> searchStudents(
+            @RequestParam("keyword") String keyword
+    ) {
+        return ResponseEntity.ok(
+                studentService.searchByFullName(keyword)
+        );
+    }
+
     @GetMapping("{id}")
     public ResponseEntity<StudentResponse> getById(@PathVariable Long id) {
         return studentService.findById(id)
