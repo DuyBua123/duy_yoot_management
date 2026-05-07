@@ -1,8 +1,7 @@
 package duy.project.yoot_management.domains;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import duy.project.yoot_management.domains.enums.Gender;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -18,5 +17,10 @@ public class Parent extends AuditableEntity {
     private String email;
     @Column(columnDefinition = "varchar(255)")
     private String address;
+    @Column(length = 20)
+    private String relationship;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10)
+    private Gender gender;
 
 }

@@ -1,8 +1,9 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.domains.Teacher;
-import duy.project.yoot_management.dto.request.TeacherRequest;
+import duy.project.yoot_management.dto.request.TeacherUpsertRequest;
 import duy.project.yoot_management.service.TeacherService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,14 +31,16 @@ public class TeacherController {
     }
 
     @PostMapping
-    public ResponseEntity<Teacher> createTeacher(@RequestBody TeacherRequest teacher) {
+    public ResponseEntity<Teacher> createTeacher(
+            @RequestBody @Valid TeacherUpsertRequest teacher
+    ) {
         return ResponseEntity.ok(teacherService.create(teacher));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Teacher> updateTeacher(
             @PathVariable("id") Long id,
-            @RequestBody TeacherRequest teacher
+            @RequestBody @Valid TeacherUpsertRequest teacher
     ) {
         try {
             return ResponseEntity.ok(teacherService.update(id, teacher));

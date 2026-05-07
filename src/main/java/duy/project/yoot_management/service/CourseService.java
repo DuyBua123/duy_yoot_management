@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service;
 
 import duy.project.yoot_management.domains.Course;
-import duy.project.yoot_management.dto.request.CourseRequest;
+import duy.project.yoot_management.dto.request.CourseUpsertRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,9 @@ public interface CourseService {
 
     Optional<Course> findById(Long id);
 
-    Course create(CourseRequest course);
+    Course create(CourseUpsertRequest course);
 
-    Course update(Long id, CourseRequest course);
+    Course update(Long id, CourseUpsertRequest course);
 
     void deleteById(Long id);
 

@@ -1,7 +1,7 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.domains.Course;
-import duy.project.yoot_management.dto.request.CourseRequest;
+import duy.project.yoot_management.dto.request.CourseUpsertRequest;
 import duy.project.yoot_management.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +31,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<Course> createCourse(@RequestBody CourseRequest course) {
+    public ResponseEntity<Course> createCourse(@RequestBody CourseUpsertRequest course) {
         Course createdCourse = courseService.create(course);
         return ResponseEntity.ok(createdCourse);
     }
@@ -39,7 +39,7 @@ public class CourseController {
     @PutMapping("/{id}")
     public ResponseEntity<Course> updateCourse(
             @PathVariable("id") Long id,
-            @RequestBody CourseRequest course
+            @RequestBody CourseUpsertRequest course
     ) {
         try {
             Course updatedCourse = courseService.update(id, course);

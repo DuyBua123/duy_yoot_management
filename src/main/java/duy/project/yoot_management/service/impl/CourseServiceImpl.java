@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Course;
-import duy.project.yoot_management.dto.request.CourseRequest;
+import duy.project.yoot_management.dto.request.CourseUpsertRequest;
 import duy.project.yoot_management.repository.CourseRepository;
 import duy.project.yoot_management.service.CourseService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course create(CourseRequest course) {
+    public Course create(CourseUpsertRequest course) {
 
         Course newCourse = new Course();
         newCourse.setCourseCode(course.getCourseCode());
@@ -42,7 +42,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course update(Long id, CourseRequest course) {
+    public Course update(Long id, CourseUpsertRequest course) {
 
         Optional<Course> updatingCourse = courseRepository.findById(id);
         if (updatingCourse.isEmpty()) {
