@@ -1,5 +1,6 @@
 package duy.project.yoot_management.dto.request;
 
+import duy.project.yoot_management.common.validations.NotFutureDateConstraint;
 import duy.project.yoot_management.domains.Parent;
 import duy.project.yoot_management.domains.enums.Gender;
 import duy.project.yoot_management.domains.enums.StudentStatus;
@@ -23,6 +24,7 @@ public class StudentUpsertRequest {
     @NotBlank
     private String fullName;
 
+    @NotFutureDateConstraint
     private LocalDate dateOfBirth;
 
     private Gender gender = Gender.OTHER;

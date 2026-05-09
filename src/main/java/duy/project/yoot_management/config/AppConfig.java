@@ -12,9 +12,9 @@ public class AppConfig {
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration()
-                .setFieldMatchingEnabled(true)
-                .setMatchingStrategy(MatchingStrategies.STRICT)
-                .setAmbiguityIgnored(true);
+                .setFieldMatchingEnabled(true) // Map by field directly (Without using getter/setter)
+                .setMatchingStrategy(MatchingStrategies.STRICT) // Mapp exact field name
+                .setAmbiguityIgnored(true); // Ignore ambiguity when multiple fields match
 
         return modelMapper;
     }
