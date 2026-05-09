@@ -2,9 +2,11 @@ package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Parent;
 import duy.project.yoot_management.dto.request.ParentUpsertRequest;
+import duy.project.yoot_management.dto.response.ParentResponse;
 import duy.project.yoot_management.repository.ParentRepository;
 import duy.project.yoot_management.service.ParentService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Optional;
 public class ParentServiceImpl implements ParentService {
 
     private final ParentRepository parentRepository;
+    private final ModelMapper mapper;
 
 
     @Override
@@ -63,4 +66,12 @@ public class ParentServiceImpl implements ParentService {
         }
         parentRepository.deleteById(id);
     }
+
+
+
+    // PRIVATE METHODS
+    private ParentResponse mapParentResponse(Parent parent) {
+        return mapper.map(parent, ParentResponse.class);
+    }
+
 }
