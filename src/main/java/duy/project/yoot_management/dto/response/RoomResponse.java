@@ -1,0 +1,26 @@
+package duy.project.yoot_management.dto.response;
+
+import jakarta.persistence.Column;
+import lombok.Data;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Data
+public class RoomResponse {
+
+    private Long id;
+
+    private String roomCode;
+
+    private String name;
+
+    private int capacity;
+
+    private String description;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+}
