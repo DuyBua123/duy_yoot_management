@@ -17,3 +17,11 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
+
+
+app:
+  jwt:
+    issuer: yoedu-demo
+    secret: qv!!a?6ct7tM;2{:tkJ*vvP(4P7f}%PZ
+    access-token-ttl-minutes: 480
+    refresh-token-ttl-days: 7
