@@ -5,6 +5,7 @@ import duy.project.yoot_management.dto.request.CourseUpsertRequest;
 import duy.project.yoot_management.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

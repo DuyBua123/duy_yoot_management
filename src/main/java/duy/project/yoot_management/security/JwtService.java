@@ -8,6 +8,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +23,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class JwtService {
 
     public static final String TOKEN_TYPE_CLAIM = "tokenType";
@@ -30,12 +31,10 @@ public class JwtService {
 
     private final AppJwtProperties properties;
     private final SecretKey secretKey;
-    private final UserRepository userRepository;
 
-    public JwtService(AppJwtProperties properties, UserRepository userRepository) {
+    public JwtService(AppJwtProperties properties) {
         this.properties = properties;
         this.secretKey = Keys.hmacShaKeyFor(properties.secret().getBytes(StandardCharsets.UTF_8));
-        this.userRepository = userRepository;
     }
 
 

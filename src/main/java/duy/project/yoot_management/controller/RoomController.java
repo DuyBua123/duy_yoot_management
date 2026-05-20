@@ -8,6 +8,7 @@ import duy.project.yoot_management.service.RoomService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class RoomController {
 
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN','ACADEMIC_STAFF')")
     public ApiResponse<List<RoomResponse>> getAllRooms() {
         return ApiResponse.success(roomService.findAll());
     }
