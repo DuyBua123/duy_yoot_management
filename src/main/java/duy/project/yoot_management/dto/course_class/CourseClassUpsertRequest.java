@@ -1,4 +1,4 @@
-package duy.project.yoot_management.dto.courseclass;
+package duy.project.yoot_management.dto.course_class;
 
 import duy.project.yoot_management.domains.enums.ClassStatus;
 import jakarta.validation.constraints.*;
@@ -9,9 +9,6 @@ import java.time.LocalDate;
 @Data
 public class CourseClassUpsertRequest {
 
-    @NotBlank
-    @Size(max = 20)
-    String classCode;
 
     @NotBlank
     @Size(max = 100)

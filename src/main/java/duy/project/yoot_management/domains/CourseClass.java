@@ -11,7 +11,8 @@ import java.time.LocalDate;
 @Data
 public class CourseClass extends AuditableEntity {
 
-    private String codeCode;
+    @Column(name = "class_code", columnDefinition = "varchar(50)")
+    private String classCode;
 
     @Column(columnDefinition = "varchar(100)")
     private String name;
