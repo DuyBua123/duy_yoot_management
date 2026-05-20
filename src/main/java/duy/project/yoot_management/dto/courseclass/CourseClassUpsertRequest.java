@@ -1,6 +1,6 @@
 package duy.project.yoot_management.dto.courseclass;
 
-import com.yo.day1.domain.enums.ClassStatus;
+import duy.project.yoot_management.domains.enums.ClassStatus;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 

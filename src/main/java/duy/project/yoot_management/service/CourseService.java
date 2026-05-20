@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service;
 
 import duy.project.yoot_management.domains.Course;
-import duy.project.yoot_management.dto.request.CourseUpsertRequest;
+import duy.project.yoot_management.dto.course.CourseUpsertRequest;
 
 import java.util.List;
 import java.util.Optional;

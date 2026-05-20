@@ -1,6 +1,7 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.domains.Parent;
+import duy.project.yoot_management.dto.parent.ParentUpsertRequest;
 import duy.project.yoot_management.service.ParentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

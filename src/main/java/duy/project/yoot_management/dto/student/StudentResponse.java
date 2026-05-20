@@ -1,8 +1,9 @@
 package duy.project.yoot_management.dto.student;
 
-import com.yo.day1.domain.enums.Gender;
-import com.yo.day1.domain.enums.StudentStatus;
-import com.yo.day1.dto.parent.ParentResponse;
+
+import duy.project.yoot_management.domains.enums.Gender;
+import duy.project.yoot_management.domains.enums.StudentStatus;
+import duy.project.yoot_management.dto.parent.ParentResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

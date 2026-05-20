@@ -1,6 +1,6 @@
 package duy.project.yoot_management.repository;
 
-import com.yo.day1.domain.entity.Course;
+import duy.project.yoot_management.domains.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

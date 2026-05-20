@@ -1,10 +1,11 @@
 package duy.project.yoot_management.dto.courseclass;
 
-import com.yo.day1.domain.entity.ScheduleSlot;
-import com.yo.day1.domain.entity.Teacher;
-import com.yo.day1.domain.enums.ClassStatus;
-import com.yo.day1.dto.course.CourseResponse;
-import com.yo.day1.dto.room.RoomResponse;
+
+import duy.project.yoot_management.domains.ScheduleSlot;
+import duy.project.yoot_management.domains.Teacher;
+import duy.project.yoot_management.domains.enums.ClassStatus;
+import duy.project.yoot_management.dto.course.CourseResponse;
+import duy.project.yoot_management.dto.room.RoomResponse;
 import lombok.Data;
 
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package duy.project.yoot_management.dto.parent;
 
-import com.yo.day1.domain.enums.Gender;
+import duy.project.yoot_management.domains.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
