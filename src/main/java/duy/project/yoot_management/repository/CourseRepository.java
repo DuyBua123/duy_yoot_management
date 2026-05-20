@@ -1,17 +1,12 @@
 package duy.project.yoot_management.repository;
 
-import duy.project.yoot_management.domains.Course;
+import com.yo.day1.domain.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
-
-    @Query("SELECT c FROM Course c WHERE c.isActive = true")
+    @Query("SELECT o FROM Course o WHERE o.isActive=1")
     List<Course> findByCourseActive();
-
 }

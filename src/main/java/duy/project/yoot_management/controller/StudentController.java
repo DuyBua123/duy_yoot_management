@@ -1,8 +1,8 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.common.exception.NotFoundException;
-import duy.project.yoot_management.dto.request.StudentUpsertRequest;
-import duy.project.yoot_management.dto.response.StudentResponse;
+import duy.project.yoot_management.dto.student.StudentResponse;
+import duy.project.yoot_management.dto.student.StudentUpsertRequest;
 import duy.project.yoot_management.service.StudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -2,17 +2,11 @@ package duy.project.yoot_management.security;
 
 import duy.project.yoot_management.config.AppJwtProperties;
 import duy.project.yoot_management.domains.User;
-import duy.project.yoot_management.dto.response.CurrentUserResponse;
-import duy.project.yoot_management.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;

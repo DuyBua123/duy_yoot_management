@@ -1,9 +1,11 @@
-package duy.project.yoot_management.dto.request;
+package duy.project.yoot_management.dto.course;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
-public class CourseUpsertRequest {
+@Data
+public class CourseResponse {
+
+    private Long id;
 
     private String courseCode;
 
@@ -15,6 +17,5 @@ public class CourseUpsertRequest {
 
     private int totalSessions;
 
-    private boolean isActive;
-
+    private byte isActive;
 }

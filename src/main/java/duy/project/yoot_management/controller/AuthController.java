@@ -1,11 +1,7 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.common.ApiResponse;
-import duy.project.yoot_management.dto.request.ChangePasswordRequest;
-import duy.project.yoot_management.dto.request.LoginRequest;
-import duy.project.yoot_management.dto.request.RefreshTokenRequest;
-import duy.project.yoot_management.dto.response.AuthResponse;
-import duy.project.yoot_management.dto.response.CurrentUserResponse;
+import duy.project.yoot_management.dto.auth.*;
 import duy.project.yoot_management.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

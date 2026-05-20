@@ -1,7 +1,6 @@
 package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.domains.Teacher;
-import duy.project.yoot_management.dto.request.TeacherUpsertRequest;
 import duy.project.yoot_management.service.TeacherService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

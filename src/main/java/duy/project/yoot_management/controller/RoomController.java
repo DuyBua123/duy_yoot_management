@@ -2,8 +2,8 @@ package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.common.ApiResponse;
 import duy.project.yoot_management.common.exception.NotFoundException;
-import duy.project.yoot_management.dto.request.RoomUpsertRequest;
-import duy.project.yoot_management.dto.response.RoomResponse;
+import duy.project.yoot_management.dto.room.RoomResponse;
+import duy.project.yoot_management.dto.room.RoomUpsertRequest;
 import duy.project.yoot_management.service.RoomService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
