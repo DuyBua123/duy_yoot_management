@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service;
 
 import duy.project.yoot_management.domains.Parent;
-import duy.project.yoot_management.dto.request.ParentUpsertRequest;
+import duy.project.yoot_management.dto.parent.ParentUpsertRequest;
 
 import java.util.List;
 import java.util.Optional;

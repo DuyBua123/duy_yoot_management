@@ -1,4 +1,4 @@
-package duy.project.yoot_management.dto.response;
+package duy.project.yoot_management.dto.auth;
 
 import java.time.Instant;
 
@@ -8,6 +8,5 @@ public record AuthResponse(
         String tokenType,
         Instant expiresAt,
         Instant refreshExpiresAt,
-        CurrentUserResponse user
-) {
+        CurrentUserResponse user) {
 }

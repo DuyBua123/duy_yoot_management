@@ -1,4 +1,4 @@
-package duy.project.yoot_management.dto.request;
+package duy.project.yoot_management.dto.course;
 
 import lombok.Getter;
 

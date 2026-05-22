@@ -1,9 +1,7 @@
 package duy.project.yoot_management.domains;
 
 import duy.project.yoot_management.domains.enums.TeacherRole;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -19,6 +17,7 @@ public class Teacher extends AuditableEntity {
     private String phone;
     @Column(unique = true, nullable = false)
     private String email;
+    @Enumerated(EnumType.STRING)
     @Column(name = "teacher_role", nullable = false)
     private TeacherRole teacherRole = TeacherRole.TEACHER;
     @Column(name = "cccd_image_url", columnDefinition = "varchar(255)")
