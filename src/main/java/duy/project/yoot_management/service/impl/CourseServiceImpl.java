@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Course;
-import duy.project.yoot_management.dto.request.CourseUpsertRequest;
+import duy.project.yoot_management.dto.course.CourseUpsertRequest;
 import duy.project.yoot_management.repository.CourseRepository;
 import duy.project.yoot_management.service.CourseService;
 import lombok.RequiredArgsConstructor;

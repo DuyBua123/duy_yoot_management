@@ -1,10 +1,9 @@
-package duy.project.yoot_management.dto.request;
+package duy.project.yoot_management.dto.student;
 
-import duy.project.yoot_management.common.validations.NotFutureDateConstraint;
-import duy.project.yoot_management.domains.Parent;
+
 import duy.project.yoot_management.domains.enums.Gender;
 import duy.project.yoot_management.domains.enums.StudentStatus;
-import jakarta.validation.constraints.*;
+import duy.project.yoot_management.dto.parent.ParentResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,35 +15,34 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentUpsertRequest {
+public class StudentResponse {
 
-    @Size(min = 2)
+    private Long id;
+
     private String studentCode;
 
-    @NotBlank
     private String fullName;
 
-    @NotFutureDateConstraint
     private LocalDate dateOfBirth;
 
     private Gender gender = Gender.OTHER;
 
-    @Size(min = 1, max = 30)
     private String gradeLevel;
 
     private String schoolName;
 
-    @Pattern(regexp = "(84|0[3|5|7|8|9])+([0-9]{8})", message = "Invalid phone number format")
     private String phone;
 
-    private Long parentId;
+    private ParentResponse parent;
 
     private StudentStatus status = StudentStatus.ACTIVE;
 
-    @Min(value = 0)
-    @Max(value = 10)
     private BigDecimal latestScore = BigDecimal.ZERO;
 
     private String note;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 
 }

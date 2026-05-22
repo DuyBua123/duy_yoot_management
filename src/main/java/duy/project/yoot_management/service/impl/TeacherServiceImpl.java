@@ -1,7 +1,7 @@
 package duy.project.yoot_management.service.impl;
 
 import duy.project.yoot_management.domains.Teacher;
-import duy.project.yoot_management.dto.request.TeacherUpsertRequest;
+import duy.project.yoot_management.dto.teacher.TeacherUpsertRequest;
 import duy.project.yoot_management.repository.TeacherRepository;
 import duy.project.yoot_management.service.TeacherService;
 import lombok.RequiredArgsConstructor;

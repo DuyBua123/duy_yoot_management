@@ -2,12 +2,13 @@ package duy.project.yoot_management.controller;
 
 import duy.project.yoot_management.common.ApiResponse;
 import duy.project.yoot_management.common.exception.NotFoundException;
-import duy.project.yoot_management.dto.request.RoomUpsertRequest;
-import duy.project.yoot_management.dto.response.RoomResponse;
+import duy.project.yoot_management.dto.room.RoomResponse;
+import duy.project.yoot_management.dto.room.RoomUpsertRequest;
 import duy.project.yoot_management.service.RoomService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class RoomController {
 
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN','ACADEMIC_STAFF')")
     public ApiResponse<List<RoomResponse>> getAllRooms() {
         return ApiResponse.success(roomService.findAll());
     }

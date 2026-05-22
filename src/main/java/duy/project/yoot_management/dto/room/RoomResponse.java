@@ -1,9 +1,7 @@
-package duy.project.yoot_management.dto.response;
+package duy.project.yoot_management.dto.room;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -22,5 +20,4 @@ public class RoomResponse {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
-
 }

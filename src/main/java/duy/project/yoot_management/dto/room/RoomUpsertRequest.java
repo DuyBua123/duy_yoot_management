@@ -1,7 +1,6 @@
-package duy.project.yoot_management.dto.request;
+package duy.project.yoot_management.dto.room;
 
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -9,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 public class RoomUpsertRequest {
 
     @Length(min = 1, max = 20)
+//    @NotBlank
     private String roomCode;
 
     @Length(max = 100)

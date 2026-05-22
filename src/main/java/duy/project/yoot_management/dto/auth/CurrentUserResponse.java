@@ -1,4 +1,4 @@
-package duy.project.yoot_management.dto.response;
+package duy.project.yoot_management.dto.auth;
 
 public record CurrentUserResponse(
         Long id,

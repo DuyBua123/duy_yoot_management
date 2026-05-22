@@ -1,8 +1,8 @@
 package duy.project.yoot_management.service;
 
 import duy.project.yoot_management.common.exception.NotFoundException;
-import duy.project.yoot_management.dto.request.StudentUpsertRequest;
-import duy.project.yoot_management.dto.response.StudentResponse;
+import duy.project.yoot_management.dto.student.StudentResponse;
+import duy.project.yoot_management.dto.student.StudentUpsertRequest;
 
 import java.util.List;
 import java.util.Optional;
