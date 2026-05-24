@@ -41,17 +41,15 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse refresh(RefreshTokenRequest request) {
         String username;
         String currentJti;
-        try {
-            if (!jwtService.isRefreshToken(request.refreshToken())) {
-                throw new BadCredentialsException("Invalid refresh token");
-            }
-            username = jwtService.extractUsername(request.refreshToken());
-            currentJti = jwtService.extractJti(request.refreshToken());
-            Instant refreshExpiresAt = jwtService.extractExpiration(request.refreshToken());
-            if (refreshExpiresAt == null) {
-                throw new BadCredentialsException("Invalid refresh token");
-            }
-        } catch (JwtException | IllegalArgumentException ex) {
+
+        // Validate refresh token
+        if (!jwtService.isRefreshToken(request.refreshToken())) {
+            throw new BadCredentialsException("Invalid refresh token");
+        }
+        username = jwtService.extractUsername(request.refreshToken());
+        currentJti = jwtService.extractJti(request.refreshToken());
+        Instant refreshExpiresAt = jwtService.extractExpiration(request.refreshToken());
+        if (refreshExpiresAt == null) {
             throw new BadCredentialsException("Invalid refresh token");
         }
 
