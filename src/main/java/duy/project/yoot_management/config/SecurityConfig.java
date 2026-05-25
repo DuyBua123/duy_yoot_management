@@ -30,6 +30,10 @@ public class SecurityConfig {
                 .requestMatchers("/api/students/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth/refresh").permitAll()
+                .requestMatchers(
+                        "/v3/api-docs*/**",
+                        "/swagger-ui.html",
+                        "/swagger-ui/**").permitAll()
                 .requestMatchers("/error").permitAll()
                 .anyRequest().authenticated())
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
