@@ -33,3 +33,5 @@ build/
 .vscode/
 
 COURSE_GUIDE.md
+
+.docs/
