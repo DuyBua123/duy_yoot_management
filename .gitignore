@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+COURSE_GUIDE.md
+
+docs/

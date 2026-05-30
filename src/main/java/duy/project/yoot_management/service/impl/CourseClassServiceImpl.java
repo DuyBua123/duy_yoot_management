@@ -19,6 +19,7 @@ import duy.project.yoot_management.service.CourseClassService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -89,6 +90,12 @@ public class CourseClassServiceImpl implements CourseClassService {
         courseClass.setStatus(request.getStatus());
 
         return mapToResponse(courseClassRepository.save(courseClass));
+    }
+
+    @Transactional(readOnly = true)
+    public CourseClass getCourseClass(Long id) throws NotFoundException {
+        return courseClassRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Course class not found: " + id));
     }
 
     // PRIVATE METHOD
