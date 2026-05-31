@@ -5,6 +5,8 @@ import duy.project.yoot_management.common.exception.BadRequestException;
 import duy.project.yoot_management.common.exception.NotFoundException;
 import duy.project.yoot_management.dto.billing.InvoiceCreateRequest;
 import duy.project.yoot_management.dto.billing.InvoiceResponse;
+import duy.project.yoot_management.dto.billing.PaymentCreateRequest;
+import duy.project.yoot_management.dto.billing.PaymentResponse;
 import duy.project.yoot_management.service.BillingService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -52,4 +54,11 @@ public class BillingController {
     public ApiResponse<List<InvoiceResponse>> findInvoicesByStudent(@Parameter(description = "Student identifier", example = "1") @PathVariable Long studentId, @Parameter(hidden = true) Principal principal) throws BadRequestException, NotFoundException {
         return ApiResponse.success(billingService.findInvoicesByStudent(studentId, principal.getName()));
     }
+
+    @PostMapping("/payments")
+    @PreAuthorize("hasAnyRole('ADMIN','CASHIER')")
+    public ApiResponse<PaymentResponse> createPayment(@Valid @RequestBody PaymentCreateRequest request, Principal principal) throws NotFoundException, BadRequestException {
+        return ApiResponse.success("Payment created", billingService.createPayment(request, principal.getName()));
+    }
+
 }
