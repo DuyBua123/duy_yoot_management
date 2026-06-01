@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface StudentService {
     List<StudentResponse> findByAll();
+    List<StudentResponse> findByParentId(Long parentId);
     List<StudentResponse> searchByFullName(String keyword);
     Optional<StudentResponse> findById(Long id);
     Student getStudentForParent(Long studentId, Long parentId);

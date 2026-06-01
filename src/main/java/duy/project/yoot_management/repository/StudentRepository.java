@@ -11,4 +11,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT s FROM Student s WHERE s.fullName LIKE %:keyword%")
     List<Student> searchByFullName(String keyword);
 
+    List<Student> findByParentId(Long parentId);
+
 }

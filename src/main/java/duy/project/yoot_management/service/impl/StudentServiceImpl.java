@@ -42,6 +42,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Transactional(readOnly = true)
+    public List<StudentResponse> findByParentId(Long parentId) {
+        return studentRepository.findByParentId(parentId).stream().map(this::mapStudentResponse).toList();
+    }
+
+    @Transactional(readOnly = true)
     public Student getStudentForParent(Long studentId, Long parentId) throws NotFoundException {
         Student student = getStudent(studentId);
         if (student.getParent() == null || !student.getParent().getId().equals(parentId)) {
